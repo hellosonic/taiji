@@ -1,33 +1,50 @@
-body {
-        background-color: #e6686a;
-    }
+body{
+  background: #444;
+}
 
-#taiji {
-        width: 0px;
-        height: 600px;
-        border-left: 300px solid black;
-        border-right: 300px solid white;
-        border-radius: 100%;
-    }
+@keyframes spin{
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
 
-#taiji::before {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 100px;
-        border: 100px solid black;
-        border-radius: 100%;
-        background-color: white;
-        margin-left: -150px;
-    }
+#yinyang{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50.9%,#000000 51%,#000000 100%);
+  position:relative;
+  margin:100px auto;
+  animation-duration: 3s;
+  animation-name:spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 
-#taiji::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 100px;
-        border: 100px solid white;
-        border-radius: 100%;
-        background-color: black;
-        margin-left: -150px;
-    }
+#yinyang::before{
+  content:'';
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#fff;
+  position:absolute;
+  top:50px;
+  left:0;
+  border:40px solid black;
+}
+
+#yinyang::after{
+  content:'';
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#000;
+  position:absolute;
+  top:50px;
+  right:0;
+  border:40px solid white;
+}
+
